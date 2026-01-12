@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - NEXORA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Free standard shipping on all orders • New Collection Available
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+          <h1>NEXORA</h1>
+        </a>
+      </div>
+      <nav class="navbar-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Shop</a>
+        <a href="catalog.html?view=collections" class="nav-link">Collections</a>
+        <a href="catalog.html?view=bestsellers" class="nav-link">Best-Sellers</a>
+        <a href="catalog.html?view=deals" class="nav-link">Deals</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="navbar-actions">
+        <button class="icon-button" id="searchBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <button class="icon-button" id="accountBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+        <button class="icon-button" style="position: relative;" id="cartBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cartBadge" style="display: none;">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Modal -->
+  <div id="searchModal">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
+  </div>
+
+  <!-- Main Content -->
+  <main style="max-width: 1400px; margin: 0 auto; padding: 40px 20px; min-height: 60vh;">
+    <!-- Header -->
+    <div style="margin-bottom: 40px;">
+      <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 10px;">Checkout</h2>
+      <p style="color: var(--text-secondary);">Complete your order</p>
+    </div>
+
+    <!-- Checkout Layout -->
+    <div style="display: grid; grid-template-columns: 1fr 380px; gap: 40px; max-width: 1400px;">
+      <!-- Checkout Form -->
+      <div>
+        <div id="successMessage" style="display: none; background-color: #d1fae5; border: 1px solid #6ee7b7; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 24px;">
+          <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 10px; color: #059669;">✅ Order Confirmed!</h3>
+          <p id="orderIdDisplay" style="color: #059669; font-weight: 500; margin-bottom: 8px;"></p>
+          <p style="color: #059669; margin-bottom: 16px;">Thank you for your purchase. Your order is being prepared.</p>
+          <a href="orders.html" style="display: inline-block; padding: 10px 24px; background-color: #059669; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background-color 0.3s;">View My Orders</a>
+        </div>
+
+        <form id="checkoutForm" style="background-color: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+          <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">Shipping Information</h3>
+
+          <div style="margin-bottom: 16px;">
+            <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name *</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; background-color: var(--surface); color: var(--text-primary); outline: none; font-size: 14px;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500;">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; background-color: var(--surface); color: var(--text-primary); outline: none; font-size: 14px;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label for="city" style="display: block; margin-bottom: 8px; font-weight: 500;">City *</label>
+            <select id="city" name="city" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; background-color: var(--surface); color: var(--text-primary); outline: none; font-size: 14px;">
+              <option value="">Select a city</option>
+              <option value="Casablanca">Casablanca (+30 MAD)</option>
+              <option value="Rabat">Rabat (+35 MAD)</option>
+              <option value="Marrakech">Marrakech (+40 MAD)</option>
+              <option value="Other">Other Cities (+45 MAD)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <label for="address" style="display: block; margin-bottom: 8px; font-weight: 500;">Address *</label>
+            <input type="text" id="address" name="address" placeholder="Street address" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; background-color: var(--surface); color: var(--text-primary); outline: none; font-size: 14px;">
+          </div>
+
+          <button type="submit" style="width: 100%; padding: 14px 16px; background-color: var(--accent); color: var(--bg-primary); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); font-size: 14px; text-transform: uppercase;">Place Order</button>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <aside style="position: sticky; top: 100px; height: fit-content;">
+        <div style="background-color: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+          <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">Order Summary</h3>
+
+          <div id="summaryItems" style="margin-bottom: 20px;"></div>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--text-secondary);">Subtotal</span>
+            <span id="summarySubtotal" style="font-weight: 600;">0 MAD</span>
+          </div>
+
+          <div id="summaryDiscount" style="display: none; justify-content: space-between; margin-bottom: 12px; color: #10b981;">
+            <span>Discount</span>
+            <span id="summaryDiscountAmount">-0 MAD</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--text-secondary);">Shipping</span>
+            <span id="summaryShipping" style="font-weight: 600;">0 MAD</span>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); padding-top: 16px; display: flex; justify-content: space-between;">
+            <span style="font-weight: 600; font-size: 16px;">Total</span>
+            <span id="summaryTotal" style="font-weight: 700; font-size: 18px; color: var(--accent);">0 MAD</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+      <div class="footer-column">
+        <h4>NEXORA</h4>
+        <p>Premium tech products for modern living</p>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NEXORA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/pages/checkout.js"></script>
+</body>
+</html>

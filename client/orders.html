@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders - NEXORA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Promo Bar -->
+    <div class="promo-bar">
+      <p>🚚 Free shipping on all orders</p>
+    </div>
+
+    <!-- Header/Navbar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <a href="index.html"><h1>NEXORA</h1></a>
+        </div>
+        <nav class="navbar-menu">
+          <a href="index.html">Shop</a>
+          <a href="catalog.html">Collections</a>
+          <a href="#">Compare</a>
+          <a href="#">Blog</a>
+          <a href="#">About</a>
+        </nav>
+        <div class="navbar-icons">
+          <button id="searchBtn" class="icon-btn">🔍</button>
+          <button id="accountBtn" class="icon-btn">👤</button>
+          <button id="cartBtn" class="icon-btn">🛒<span id="cartCount" class="cart-count">0</span></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal hidden">
+      <div class="modal-content modal-search">
+        <button class="modal-close">&times;</button>
+        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <section class="orders-section">
+        <div class="orders-container">
+          <h2>My Orders</h2>
+
+          <div id="authCheck" class="auth-message">
+            <p>Please <a href="login.html">log in</a> to view your orders.</p>
+          </div>
+
+          <div id="ordersContent" class="orders-content hidden">
+            <div id="ordersList" class="orders-list">
+              <p style="text-align: center; padding: 40px;">Loading orders...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>NEXORA</h4>
+          <p>Premium tech products for modern living</p>
+        </div>
+        <div class="footer-section">
+          <h5>Quick Links</h5>
+          <a href="#">Shop</a>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+          <h5>Support</h5>
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping</a>
+        </div>
+        <div class="footer-section">
+          <h5>Legal</h5>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NEXORA. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="js/pages/orders.js"></script>
+</body>
+</html>

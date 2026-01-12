@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - NEXORA Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>NEXORA</h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link active">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="products.html" class="nav-link">
+          <span>📦</span> Products
+        </a>
+        <a href="categories.html" class="nav-link">
+          <span>🏷️</span> Categories
+        </a>
+        <a href="customers.html" class="nav-link">
+          <span>👥</span> Users
+        </a>
+        <a href="orders.html" class="nav-link">
+          <span>📋</span> Orders
+        </a>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-brand">NEXORA Admin</div>
+        <div class="navbar-end">
+          <span class="navbar-user">Admin</span>
+          <button id="logoutBtn" class="navbar-logout">Logout</button>
+        </div>
+      </nav>
+      
+      <!-- Content -->
+      <div class="content-wrapper">
+        <div id="dashboardContent"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- KPI Cards Template -->
+  <template id="kpiTemplate">
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <h3>Total Revenue</h3>
+        <p class="kpi-value" id="totalRevenue">DH 0</p>
+        <p class="kpi-label">This Period</p>
+      </div>
+      
+      <div class="kpi-card">
+        <h3>Total Orders</h3>
+        <p class="kpi-value" id="totalOrders">0</p>
+        <p class="kpi-label">All Time</p>
+      </div>
+      
+      <div class="kpi-card">
+        <h3>Total Customers</h3>
+        <p class="kpi-value" id="totalCustomers">0</p>
+        <p class="kpi-label">All Time</p>
+      </div>
+      
+      <div class="kpi-card">
+        <h3>Total Products</h3>
+        <p class="kpi-value" id="totalProducts">0</p>
+        <p class="kpi-label">In Catalog</p>
+      </div>
+    </div>
+  </template>
+
+  <!-- Charts Template -->
+  <template id="chartsTemplate">
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3>Orders by Status</h3>
+        <canvas id="orderStatusChart"></canvas>
+      </div>
+      
+      <div class="chart-card">
+        <h3>Top 5 Products</h3>
+        <canvas id="topProductsChart"></canvas>
+      </div>
+      
+      <div class="chart-card">
+        <h3>Daily Sales</h3>
+        <canvas id="dailySalesChart"></canvas>
+      </div>
+      
+      <div class="chart-card">
+        <h3>Sales by Category</h3>
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+  </template>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+</body>
+</html>

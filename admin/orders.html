@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders - NEXORA Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>NEXORA</h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="products.html" class="nav-link">
+          <span>📦</span> Products
+        </a>
+        <a href="categories.html" class="nav-link">
+          <span>🏷️</span> Categories
+        </a>
+        <a href="customers.html" class="nav-link">
+          <span>👥</span> Users
+        </a>
+        <a href="orders.html" class="nav-link active">
+          <span>📋</span> Orders
+        </a>
+
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-brand">NEXORA Admin</div>
+        <div class="navbar-end">
+          <span class="navbar-user">Admin</span>
+          <button id="logoutBtn" class="navbar-logout">Logout</button>
+        </div>
+      </nav>
+      
+      <!-- Content -->
+      <div class="content-wrapper">
+        <div class="content-header">
+          <h1>Orders Management</h1>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+          <select id="statusFilter" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px;">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="processing">Processing</option>
+            <option value="shipped">Shipped</option>
+            <option value="delivered">Delivered</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="content-section">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <tr>
+                  <td colspan="6" style="text-align: center; padding: 40px;">
+                    <div style="font-size: 18px; color: #999;">Loading orders...</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Order Detail Modal -->
+  <div id="orderModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Order Details</h2>
+        <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+      </div>
+      <div id="orderDetails" style="padding: 20px;">
+        <!-- Order details will be loaded here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeOrderModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/pages/orders.js"></script>
+</body>
+</html>

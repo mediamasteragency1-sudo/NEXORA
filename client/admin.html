@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - NEXORA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Promo Bar -->
+    <div class="promo-bar">
+      <p>🚚 Free shipping on all orders</p>
+    </div>
+
+    <!-- Header/Navbar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <a href="index.html"><h1>NEXORA</h1></a>
+        </div>
+        <nav class="navbar-menu">
+          <a href="index.html">Shop</a>
+          <a href="catalog.html">Collections</a>
+          <a href="#">Compare</a>
+          <a href="#">Blog</a>
+          <a href="#">About</a>
+        </nav>
+        <div class="navbar-icons">
+          <button id="searchBtn" class="icon-btn">🔍</button>
+          <button id="accountBtn" class="icon-btn">👤</button>
+          <button id="cartBtn" class="icon-btn">🛒<span id="cartCount" class="cart-count">0</span></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div id="authCheck" class="auth-message">
+        <p>Admin access required. Please <a href="login.html">log in with admin account</a>.</p>
+      </div>
+
+      <section id="adminContent" class="admin-section hidden">
+        <div class="admin-container">
+          <h2>Admin Dashboard</h2>
+
+          <!-- KPIs -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Total Revenue</div>
+              <div class="kpi-value" id="kpiTotalRevenue">0 MAD</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Month Revenue</div>
+              <div class="kpi-value" id="kpiMonthRevenue">0 MAD</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Total Orders</div>
+              <div class="kpi-value" id="kpiTotalOrders">0</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Avg Order Value</div>
+              <div class="kpi-value" id="kpiAvgOrderValue">0 MAD</div>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="orders">Orders</button>
+            <button class="tab-btn" data-tab="products">Products</button>
+            <button class="tab-btn" data-tab="analytics">Analytics</button>
+          </div>
+
+          <!-- Orders Tab -->
+          <div id="ordersTab" class="tab-content active">
+            <h3>Recent Orders</h3>
+            <div class="orders-table-container">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                  <tr><td colspan="6" style="text-align: center;">Loading orders...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Products Tab -->
+          <div id="productsTab" class="tab-content">
+            <h3>Products Management</h3>
+            <button id="addProductBtn" class="add-btn">+ Add New Product</button>
+
+            <div class="products-table-container">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                  <tr><td colspan="6" style="text-align: center;">Loading products...</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Product Form Modal -->
+            <div id="productModal" class="modal hidden">
+              <div class="modal-content modal-product">
+                <button class="modal-close">&times;</button>
+                <h3 id="productModalTitle">Add Product</h3>
+                <form id="productForm">
+                  <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" id="productName" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Price *</label>
+                    <input type="number" id="productPrice" step="0.01" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Category *</label>
+                    <select id="productCategory" required>
+                      <option value="">Select</option>
+                      <option value="Headphones">Headphones</option>
+                      <option value="Earbuds">Earbuds</option>
+                      <option value="Speakers">Speakers</option>
+                      <option value="Gaming">Gaming</option>
+                      <option value="Accessories">Accessories</option>
+                      <option value="Smart Home">Smart Home</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Stock *</label>
+                    <input type="number" id="productStock" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="productDescription" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="url" id="productImageUrl">
+                  </div>
+                  <div class="form-group">
+                    <label>Rating</label>
+                    <input type="number" id="productRating" step="0.1" min="0" max="5">
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" id="productFeatured">
+                      Featured
+                    </label>
+                  </div>
+                  <button type="submit" class="submit-btn">Save Product</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics Tab -->
+          <div id="analyticsTab" class="tab-content">
+            <h3>Analytics</h3>
+
+            <!-- Status Breakdown -->
+            <div class="analytics-grid">
+              <div class="analytics-card">
+                <h4>Order Status Breakdown</h4>
+                <div id="statusBreakdown" class="status-breakdown"></div>
+              </div>
+
+              <!-- Top Products -->
+              <div class="analytics-card">
+                <h4>Top 5 Products</h4>
+                <div id="topProducts" class="top-products"></div>
+              </div>
+            </div>
+
+            <!-- Orders Per Day Chart -->
+            <div class="analytics-card">
+              <h4>Orders (Last 7 Days)</h4>
+              <canvas id="ordersChart" width="400" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>NEXORA</h4>
+          <p>Premium tech products for modern living</p>
+        </div>
+        <div class="footer-section">
+          <h5>Quick Links</h5>
+          <a href="#">Shop</a>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+          <h5>Support</h5>
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping</a>
+        </div>
+        <div class="footer-section">
+          <h5>Legal</h5>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NEXORA. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="js/pages/admin.js"></script>
+</body>
+</html>

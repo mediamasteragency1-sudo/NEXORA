@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA - Premium Tech Experience</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      <p>Free standard shipping on all orders • New Collection Available</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <h1>NEXORA</h1>
+        </div>
+        
+        <div class="navbar-menu" id="navMenu">
+          <a href="index.html" class="nav-link">Shop</a>
+          <a href="catalog.html?view=collections" class="nav-link">Collections</a>
+          <a href="catalog.html?view=bestsellers" class="nav-link">Best-Sellers</a>
+          <a href="catalog.html?view=deals" class="nav-link">Deals</a>
+          <a href="about.html" class="nav-link">About</a>
+        </div>
+        
+        <div class="navbar-actions">
+          <button class="icon-button search-toggle" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="accountBtn" aria-label="Account">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+          <button class="icon-button cart-icon" id="cartBtn" aria-label="Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+      <div class="search-modal-content">
+        <button class="search-close" id="searchClose">&times;</button>
+        <input type="text" id="searchInput" placeholder="Search products..." class="search-input" autofocus>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </div>
+
+    <!-- Hero Slider -->
+    <section style="width: 100%; height: 500px; position: relative; overflow: hidden;">
+      <!-- Slide 1 -->
+      <div class="slider-item" style="width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; color: white; text-align: center; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 0.5s ease; overflow: hidden;">
+        <img src="./assets/images/georgiy-lyamin-CLq9m-fADSQ-unsplash.jpg" alt="Premium Audio Experience" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="max-width: 600px; padding: 40px; position: relative; z-index: 2;">
+          <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 20px;">Premium Audio Experience</h2>
+          <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Discover the finest selection of headphones and audio devices</p>
+          <button style="background-color: #ffffff; color: #1a1a1a; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: transform 0.3s;">Shop Now</button>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="slider-item" style="width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; color: white; text-align: center; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; overflow: hidden;">
+        <img src="./assets/images/daniel-romero-6V5vTuoeCZg-unsplash.jpg" alt="Wireless Freedom" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="max-width: 600px; padding: 40px; position: relative; z-index: 2;">
+          <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 20px;">Wireless Freedom</h2>
+          <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Latest wireless earbuds with superior noise cancellation</p>
+          <button style="background-color: #ffffff; color: #1a1a1a; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: transform 0.3s;">Explore Collection</button>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="slider-item" style="width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; color: white; text-align: center; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; overflow: hidden;">
+        <img src="./assets/images/florian-olivo-Mf23RF8xArY-unsplash.jpg" alt="Gaming Gear" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="max-width: 600px; padding: 40px; position: relative; z-index: 2;">
+          <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 20px;">Gaming Gear</h2>
+          <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Professional-grade gaming headsets for immersive gameplay</p>
+          <button style="background-color: #ffffff; color: #1a1a1a; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: transform 0.3s;">View Gaming Gear</button>
+        </div>
+      </div>
+
+      <!-- Slide 4 with Image -->
+      <div class="slider-item" style="width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; color: white; text-align: center; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; overflow: hidden;">
+        <img src="./assets/images/pexels-penda-kamati-642795-1447003.jpg" alt="Discover NEXORA" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+        <div style="max-width: 600px; padding: 40px; position: relative; z-index: 2;">
+          <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 20px;">Discover NEXORA</h2>
+          <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Experience the perfect blend of style and performance</p>
+          <button style="background-color: #ffffff; color: #1a1a1a; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: transform 0.3s;">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button id="sliderPrev" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.3); border: none; color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.3s;" onmouseover="this.style.background='rgba(255, 255, 255, 0.5)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.3)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button id="sliderNext" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.3); border: none; color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.3s;" onmouseover="this.style.background='rgba(255, 255, 255, 0.5)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.3)'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Dots -->
+      <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+        <span class="slider-dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.8); cursor: pointer; transition: all 0.3s;" data-index="0"></span>
+        <span class="slider-dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: all 0.3s;" data-index="1"></span>
+        <span class="slider-dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: all 0.3s;" data-index="2"></span>
+        <span class="slider-dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: all 0.3s;" data-index="3"></span>
+      </div>
+    </section>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slider-item');
+      const dots = document.querySelectorAll('.slider-dot');
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.opacity = i === index ? '1' : '0';
+        });
+        dots.forEach((dot, i) => {
+          dot.style.background = i === index ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.4)';
+        });
+        currentSlide = index;
+      }
+
+      document.getElementById('sliderNext').addEventListener('click', () => {
+        showSlide((currentSlide + 1) % slides.length);
+      });
+
+      document.getElementById('sliderPrev').addEventListener('click', () => {
+        showSlide((currentSlide - 1 + slides.length) % slides.length);
+      });
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          showSlide(parseInt(dot.dataset.index));
+        });
+      });
+
+      // Auto-advance slider every 5 seconds
+      setInterval(() => {
+        showSlide((currentSlide + 1) % slides.length);
+      }, 5000);
+    </script>
+
+    <!-- Mastery Section with Banners -->
+    <section class="mastery-section">
+      <div class="container">
+        <div class="mastery-header">
+          <h2>Mastery is a never-ending exploration</h2>
+        </div>
+        <div class="banners-grid" id="bannersGrid">
+          <!-- Banners will be inserted by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="best-sellers-section">
+      <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px;">
+          <h2 style="font-size: 28px; font-weight: 700; color: #000000;">Best Sellers</h2>
+          <a href="catalog.html" style="color: #000000; text-decoration: none; font-weight: 600; transition: color var(--transition); border-bottom: 2px solid transparent;" onmouseover="this.style.borderBottomColor='#000000'" onmouseout="this.style.borderBottomColor='transparent'">View all →</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;" id="bestSellersGrid">
+          <!-- Product 1 -->
+          <div style="display: flex; flex-direction: column; height: 100%; border: 1px solid #d0d0d0; border-radius: 12px; overflow: hidden; transition: all 0.3s; background-color: #ffffff;">
+            <div style="width: 100%; height: 320px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="./assets/images/headphones-aeromax.png" alt="NEXORA AeroMax ANC 700" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
+              <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">NEXORA AeroMax ANC 700</h3>
+              <p style="font-size: 14px; color: #666666; margin-bottom: 12px;">Premium noise-cancelling headphones engineered for pristine audio</p>
+              <div style="display: flex; gap: 8px; margin-top: auto; align-items: center;">
+                <span style="font-weight: 700; font-size: 18px; color: #000000;">799 MAD</span>
+                <span style="color: #f5a623; font-size: 14px;">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div style="display: flex; flex-direction: column; height: 100%; border: 1px solid #d0d0d0; border-radius: 12px; overflow: hidden; transition: all 0.3s; background-color: #ffffff;">
+            <div style="width: 100%; height: 320px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="./assets/images/earbuds-silent.png" alt="NEXORA SilentBuds ANC" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
+              <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">NEXORA SilentBuds ANC</h3>
+              <p style="font-size: 14px; color: #666666; margin-bottom: 12px;">Advanced noise-cancelling earbuds with immersive sound</p>
+              <div style="display: flex; gap: 8px; margin-top: auto; align-items: center;">
+                <span style="font-weight: 700; font-size: 18px; color: #000000;">599 MAD</span>
+                <span style="color: #f5a623; font-size: 14px;">★★★★☆</span>
+              </div>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div style="display: flex; flex-direction: column; height: 100%; border: 1px solid #d0d0d0; border-radius: 12px; overflow: hidden; transition: all 0.3s; background-color: #ffffff;">
+            <div style="width: 100%; height: 320px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="./assets/images/speakers-soundwave.png" alt="NEXORA SoundBar Lite" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
+              <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">NEXORA SoundBar Lite</h3>
+              <p style="font-size: 14px; color: #666666; margin-bottom: 12px;">Premium soundbar transforming your TV experience with cinematic audio</p>
+              <div style="display: flex; gap: 8px; margin-top: auto; align-items: center;">
+                <span style="font-weight: 700; font-size: 18px; color: #000000;">899 MAD</span>
+                <span style="color: #f5a623; font-size: 14px;">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div style="display: flex; flex-direction: column; height: 100%; border: 1px solid #d0d0d0; border-radius: 12px; overflow: hidden; transition: all 0.3s; background-color: #ffffff;">
+            <div style="width: 100%; height: 320px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="./assets/images/gaming-keyboard-rgb.png" alt="NEXORA RGB Mechanical Keyboard" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
+              <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">NEXORA RGB Mechanical Keyboard</h3>
+              <p style="font-size: 14px; color: #666666; margin-bottom: 12px;">Premium mechanical keyboard with responsive tactile feedback and RGB lighting</p>
+              <div style="display: flex; gap: 8px; margin-top: auto; align-items: center;">
+                <span style="font-weight: 700; font-size: 18px; color: #000000;">449 MAD</span>
+                <span style="color: #f5a623; font-size: 14px;">★★★★☆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>NEXORA</h4>
+            <p>Premium audio and tech products for the discerning listener.</p>
+          </div>
+          <div class="footer-column">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="catalog.html">Headphones</a></li>
+              <li><a href="catalog.html">Earbuds</a></li>
+              <li><a href="catalog.html">Speakers</a></li>
+              <li><a href="catalog.html">Accessories</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Warranty</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Newsletter</h4>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 NEXORA. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Set active nav link based on current page
+    function setActiveNavLink() {
+      let currentPage = window.location.pathname.split('/').pop();
+      if (!currentPage || currentPage === '') {
+        currentPage = 'index.html';
+      }
+      
+      const navLinks = document.querySelectorAll('.nav-link');
+      const currentURL = window.location.href;
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Compare en incluant les paramètres query
+        if (href === currentPage || currentURL.includes(href)) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+    
+    // Call on page load
+    document.addEventListener('DOMContentLoaded', setActiveNavLink);
+    setActiveNavLink();
+  </script>
+
+  <script type="module" src="js/pages/home.js?v=2"></script>
+</body>
+</html>
